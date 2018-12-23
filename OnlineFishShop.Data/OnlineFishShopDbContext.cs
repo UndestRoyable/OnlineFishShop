@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using OnlineFishShop.Data.EntityConfigurations;
 using OnlineFishShop.Data.Models;
+using OnlineFishShop.Data.Models.Checkout;
 using OnlineFishShop.Data.Models.Mapping;
 
 namespace OnlineFishShop.Data
@@ -23,24 +24,26 @@ namespace OnlineFishShop.Data
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<BlogComment> BlogComments { get; set; }
 
+        public DbSet<PaymentOption> PaymentOptions { get; set; }
+        public DbSet<DeliveryOption> DeliveryOptions { get; set; }
+
         public DbSet<Faq> Faqs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-            //TODO Stoyan Lupov 15-12-2018 UNCOMMENT WHEN READY
-//            builder.ApplyConfiguration(new ProductConfiguration());
-//
-//            builder.ApplyConfiguration(new CommentConfiguration());
-//            builder.ApplyConfiguration(new RatingConfiguration());
-//            builder.ApplyConfiguration(new CategoryConfiguration());
-//            builder.ApplyConfiguration(new CategoryProductConfiguration());
-//
-//            builder.ApplyConfiguration(new BlogPostConfiguration());
-//            builder.ApplyConfiguration(new BlogCommentConfiguration());
-//
-//            builder.ApplyConfiguration(new FaqConfiguration());
+            builder.ApplyConfiguration(new ProductConfiguration());
+
+            builder.ApplyConfiguration(new CommentConfiguration());
+            builder.ApplyConfiguration(new RatingConfiguration());
+            builder.ApplyConfiguration(new CategoryConfiguration());
+            builder.ApplyConfiguration(new CategoryProductConfiguration());
+
+            builder.ApplyConfiguration(new BlogPostConfiguration());
+            builder.ApplyConfiguration(new BlogCommentConfiguration());
+
+            builder.ApplyConfiguration(new FaqConfiguration());
         }
     }
 }

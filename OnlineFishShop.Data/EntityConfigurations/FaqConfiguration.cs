@@ -9,9 +9,17 @@ namespace OnlineFishShop.Data.EntityConfigurations
 {
     public class FaqConfiguration : IEntityTypeConfiguration<Faq>
     {
-        public void Configure(EntityTypeBuilder<Faq> builder)
+        public void Configure(EntityTypeBuilder<Faq> entity)
         {
-            throw new NotImplementedException();
+            entity.ToTable("Faqs");
+
+            entity
+                .Property(x => x.Answer)
+                .HasDefaultValue("");
+
+            entity
+                .Property(x => x.Title)
+                .HasDefaultValue("");
         }
     }
 }

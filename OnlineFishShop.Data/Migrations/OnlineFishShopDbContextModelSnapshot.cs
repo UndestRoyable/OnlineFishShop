@@ -190,7 +190,29 @@ namespace OnlineFishShop.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("BlogPostId");
+
+                    b.Property<DateTime>("DateAdded");
+
+                    b.Property<DateTime?>("DateEdited");
+
+                    b.Property<bool>("IsEdited")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue("");
+
+                    b.Property<string>("UserId")
+                        .IsRequired();
+
                     b.HasKey("Id");
+
+                    b.HasIndex("BlogPostId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("BlogComments");
                 });
@@ -218,7 +240,38 @@ namespace OnlineFishShop.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Name")
+                        .IsUnique();
+
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("OnlineFishShop.Data.Models.Checkout.DeliveryOption", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(20);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DeliveryOptions");
+                });
+
+            modelBuilder.Entity("OnlineFishShop.Data.Models.Checkout.PaymentOption", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(20);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PaymentOptions");
                 });
 
             modelBuilder.Entity("OnlineFishShop.Data.Models.Checkout.Purchase", b =>
@@ -246,11 +299,29 @@ namespace OnlineFishShop.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ProductId");
+                    b.Property<DateTime>("DateAdded");
+
+                    b.Property<DateTime?>("DateEdited");
+
+                    b.Property<bool>("IsEdited")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue("");
+
+                    b.Property<int>("ProductId");
+
+                    b.Property<string>("UserId")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Comments");
                 });
@@ -261,6 +332,14 @@ namespace OnlineFishShop.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Answer")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue("");
+
+                    b.Property<string>("Title")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue("");
+
                     b.HasKey("Id");
 
                     b.ToTable("Faqs");
@@ -268,19 +347,13 @@ namespace OnlineFishShop.Data.Migrations
 
             modelBuilder.Entity("OnlineFishShop.Data.Models.Mapping.CategoryProduct", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("ProductId");
 
                     b.Property<int>("CategoryId");
 
-                    b.Property<int>("ProductId");
+                    b.HasKey("ProductId", "CategoryId");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("ProductId");
+                    b.HasAlternateKey("CategoryId", "ProductId");
 
                     b.ToTable("CategoryProduct");
                 });
@@ -291,13 +364,19 @@ namespace OnlineFishShop.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue("");
 
-                    b.Property<bool>("IsInSale");
+                    b.Property<bool>("IsInSale")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Make")
                         .IsRequired()
-                        .HasMaxLength(25);
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(25)
+                        .HasDefaultValue("");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -305,13 +384,18 @@ namespace OnlineFishShop.Data.Migrations
 
                     b.Property<decimal>("Price");
 
-                    b.Property<decimal?>("SalePrice");
+                    b.Property<decimal?>("SalePrice")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(null);
 
                     b.Property<byte>("Stock");
 
                     b.Property<string>("ThumbnailSource");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Products");
                 });
@@ -322,11 +406,18 @@ namespace OnlineFishShop.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ProductId");
+                    b.Property<int>("ProductId");
+
+                    b.Property<string>("UserId")
+                        .IsRequired();
+
+                    b.Property<byte>("Value");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Ratings");
                 });
@@ -376,6 +467,19 @@ namespace OnlineFishShop.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("OnlineFishShop.Data.Models.BlogComment", b =>
+                {
+                    b.HasOne("OnlineFishShop.Data.Models.BlogPost", "BlogPost")
+                        .WithMany("Comments")
+                        .HasForeignKey("BlogPostId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("OnlineFishShop.Data.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("OnlineFishShop.Data.Models.Checkout.Purchase", b =>
                 {
                     b.HasOne("OnlineFishShop.Data.Models.ApplicationUser", "Customer")
@@ -385,29 +489,41 @@ namespace OnlineFishShop.Data.Migrations
 
             modelBuilder.Entity("OnlineFishShop.Data.Models.Comment", b =>
                 {
-                    b.HasOne("OnlineFishShop.Data.Models.Product")
+                    b.HasOne("OnlineFishShop.Data.Models.Product", "Product")
                         .WithMany("Comments")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("OnlineFishShop.Data.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("OnlineFishShop.Data.Models.Mapping.CategoryProduct", b =>
                 {
                     b.HasOne("OnlineFishShop.Data.Models.Category", "Category")
-                        .WithMany("Products")
+                        .WithMany("CategoryProducts")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("OnlineFishShop.Data.Models.Product", "Product")
-                        .WithMany("Categories")
+                        .WithMany("CategoryProducts")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("OnlineFishShop.Data.Models.Rating", b =>
                 {
-                    b.HasOne("OnlineFishShop.Data.Models.Product")
+                    b.HasOne("OnlineFishShop.Data.Models.Product", "Product")
                         .WithMany("Ratings")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("OnlineFishShop.Data.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

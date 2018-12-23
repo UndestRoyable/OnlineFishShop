@@ -9,9 +9,13 @@ namespace OnlineFishShop.Data.EntityConfigurations
 {
     public class BlogPostConfiguration : IEntityTypeConfiguration<BlogPost>
     {
-        public void Configure(EntityTypeBuilder<BlogPost> builder)
+        public void Configure(EntityTypeBuilder<BlogPost> entity)
         {
-            throw new NotImplementedException();
+            entity.ToTable("BlogPosts");
+
+            entity
+                .HasMany(c => c.Comments)
+                .WithOne(c => c.BlogPost);
         }
     }
 }

@@ -9,5 +9,7 @@ namespace OnlineFishShop.Data.Models
     {
         [Key]
         public int Id { get; set; }
+
+        public ICollection<BlogComment> Comments { get; set; }
     }
 }

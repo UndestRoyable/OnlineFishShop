@@ -9,9 +9,21 @@ namespace OnlineFishShop.Data.EntityConfigurations
 {
     public class BlogCommentConfiguration : IEntityTypeConfiguration<BlogComment>
     {
-        public void Configure(EntityTypeBuilder<BlogComment> builder)
+        public void Configure(EntityTypeBuilder<BlogComment> entity)
         {
-            throw new NotImplementedException();
+            entity.ToTable("BlogComments");
+
+            entity
+                .HasOne(c => c.BlogPost)
+                .WithMany(p => p.Comments);
+
+            entity
+                .Property(x => x.Message)
+                .HasDefaultValue("");
+
+            entity
+                .Property(x => x.IsEdited)
+                .HasDefaultValue(false);
         }
     }
 }

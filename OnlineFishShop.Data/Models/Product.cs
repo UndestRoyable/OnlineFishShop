@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
+using OnlineFishShop.Data.EntityConfigurations.ValidationAttributes;
 using OnlineFishShop.Data.Models.Mapping;
 
 namespace OnlineFishShop.Data.Models
@@ -22,7 +21,7 @@ namespace OnlineFishShop.Data.Models
         public string Description { get; set; }
 
         [Required]
-//        [StockQuantity]
+        [StockQuantity]
         public byte Stock { get; set; }
 
         [Required]
@@ -39,6 +38,6 @@ namespace OnlineFishShop.Data.Models
 
         public ICollection<Rating> Ratings { get; set; } = new HashSet<Rating>();
 
-        public ICollection<CategoryProduct> Categories { get; set; } = new HashSet<CategoryProduct>();
+        public ICollection<CategoryProduct> CategoryProducts { get; set; } = new HashSet<CategoryProduct>();
     }
 }

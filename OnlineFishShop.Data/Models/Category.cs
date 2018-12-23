@@ -15,6 +15,6 @@ namespace OnlineFishShop.Data.Models
         [StringLength(20, MinimumLength = 2)]
         public string Name { get; set; }
 
-        public ICollection<CategoryProduct> Products { get; set; } = new HashSet<CategoryProduct>();
+        public ICollection<CategoryProduct> CategoryProducts { get; set; } = new HashSet<CategoryProduct>();
     }
 }

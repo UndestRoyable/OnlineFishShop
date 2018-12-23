@@ -8,11 +8,10 @@ namespace OnlineFishShop.Data.Models.Mapping
     public class CategoryProduct
     {
         [Key]
-        public int Id { get; set; }
-
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
+        [Key]
         public int ProductId { get; set; }
         public Product Product { get; set; }
     }

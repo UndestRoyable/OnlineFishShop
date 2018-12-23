@@ -9,9 +9,13 @@ namespace OnlineFishShop.Data.EntityConfigurations
 {
     public class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {
-        public void Configure(EntityTypeBuilder<Category> builder)
+        public void Configure(EntityTypeBuilder<Category> entity)
         {
-            throw new NotImplementedException();
+            entity.ToTable("Categories");
+
+            entity
+                .HasIndex(x => x.Name)
+                .IsUnique();
         }
     }
 }
