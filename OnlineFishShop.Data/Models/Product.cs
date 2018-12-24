@@ -21,7 +21,7 @@ namespace OnlineFishShop.Data.Models
         public string Description { get; set; }
 
         [Required]
-        [StockQuantity]
+//        [StockQuantity]
         public byte Stock { get; set; }
 
         [Required]
@@ -34,10 +34,10 @@ namespace OnlineFishShop.Data.Models
 
         public string ThumbnailSource { get; set; }
 
-        public ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
+        public virtual ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
 
-        public ICollection<Rating> Ratings { get; set; } = new HashSet<Rating>();
+        public virtual ICollection<Rating> Ratings { get; set; } = new HashSet<Rating>();
 
-        public ICollection<CategoryProduct> CategoryProducts { get; set; } = new HashSet<CategoryProduct>();
+        public virtual ICollection<CategoryProduct> CategoryProducts { get; set; } = new HashSet<CategoryProduct>();
     }
 }

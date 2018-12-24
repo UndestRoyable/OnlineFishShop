@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +14,8 @@ using Microsoft.Extensions.DependencyInjection;
 using OnlineFishShop.Data;
 using OnlineFishShop.Data.Import.Helpers;
 using OnlineFishShop.Data.Models;
+using OnlineFishShop.Services;
+using OnlineFishShop.Services.Contracts;
 using OnlineFishShop.Web.WebServices;
 
 namespace OnlineFishShop.Web
@@ -37,11 +40,12 @@ namespace OnlineFishShop.Web
             });
 
             services.AddDbContext<OnlineFishShopDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            //            services.AddDefaultIdentity<ApplicationUser>()
-            //                .AddEntityFrameworkStores<OnlineFishShopDbContext>();
-            //
+                {
+                    options.UseLazyLoadingProxies().UseSqlServer(
+                        Configuration.GetConnectionString("DefaultConnection"));
+                }
+               );
+
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
                 {
                     // Password settings
@@ -85,16 +89,16 @@ namespace OnlineFishShop.Web
             services.AddSession();
 
             //Add data services.
-            //services.AddDataServices();
+            services.AddTransient<IGenericDataService<Product>, GenericDataService<Product>>();
 
             //Add external login options
-//            services.AddAuthentication().AddFacebook(facebookOptions =>
-//            {
-//                facebookOptions.AppId = this.Configuration.GetSection("AppKeys")["FacebookAppId"];
-//                facebookOptions.AppSecret = this.Configuration.GetSection("AppKeys")["FacebookAppSecret"];
-//            });
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = this.Configuration.GetSection("AppKeys")["FacebookAppId"];
+                facebookOptions.AppSecret = this.Configuration.GetSection("AppKeys")["FacebookAppSecret"];
+            });
 
-            //services.AddAutoMapper();
+            services.AddAutoMapper();
 
             services.AddRouting(options => options.LowercaseUrls = true);
 
@@ -126,6 +130,10 @@ namespace OnlineFishShop.Web
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "areas",
+                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

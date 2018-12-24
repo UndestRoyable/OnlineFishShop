@@ -6,13 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineFishShop.Data\OnlineFishShop.Data.csproj" />
+    <ProjectReference Include="..\OnlineFishShop.Services\OnlineFishShop.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,10 +29,8 @@
     <Folder Include="Areas\Api\Models\" />
     <Folder Include="Areas\Api\Views\" />
     <Folder Include="Areas\Identity\Services\" />
-    <Folder Include="Areas\Products\Controllers\" />
     <Folder Include="Areas\Products\Data\" />
     <Folder Include="Areas\Products\Models\" />
-    <Folder Include="Areas\Products\Views\" />
     <Folder Include="Areas\Shopping\Controllers\" />
     <Folder Include="Areas\Shopping\Data\" />
     <Folder Include="Areas\Shopping\Models\" />

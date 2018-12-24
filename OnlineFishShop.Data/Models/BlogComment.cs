@@ -16,12 +16,12 @@ namespace OnlineFishShop.Data.Models
         [Required]
         public int BlogPostId { get; set; }
 
-        public BlogPost BlogPost { get; set; }
+        public virtual BlogPost BlogPost { get; set; }
 
         [Required]
         public string UserId { get; set; }
 
-        public ApplicationUser User { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
         [Required]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MMMM/YYYY HH:mm:ss}")]

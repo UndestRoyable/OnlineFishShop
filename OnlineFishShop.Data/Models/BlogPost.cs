@@ -10,6 +10,6 @@ namespace OnlineFishShop.Data.Models
         [Key]
         public int Id { get; set; }
 
-        public ICollection<BlogComment> Comments { get; set; }
+        public virtual ICollection<BlogComment> Comments { get; set; }
     }
 }
