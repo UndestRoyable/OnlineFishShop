@@ -11,11 +11,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using OnlineFishShop.Data;
 using OnlineFishShop.Data.Import.Helpers;
 using OnlineFishShop.Data.Models;
 using OnlineFishShop.Services;
 using OnlineFishShop.Services.Contracts;
+using OnlineFishShop.Web.Infrastructure.Extensions.Helpers.Secrets;
 using OnlineFishShop.Web.WebServices;
 
 namespace OnlineFishShop.Web
@@ -64,7 +66,7 @@ namespace OnlineFishShop.Web
 
             services.ConfigureApplicationCookie(options =>
             {
-                options.Cookie.Name = "ZvezdichkaCookie";
+                options.Cookie.Name = "OnlineFishShopCookie";
                 options.Cookie.HttpOnly = true;
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
                 options.LoginPath = "/Account/Login";
@@ -76,7 +78,7 @@ namespace OnlineFishShop.Web
             });
 
             //Configure app secrets
-//            services.Configure<AppKeyConfig>(this.Configuration.GetSection("AppKeys"));
+            services.Configure<AppKeyConfig>(Configuration.GetSection("AppKeys"));
 
             //Add application services.
             services.AddTransient<IEmailSender, CustomEmailSender>();
@@ -176,7 +178,6 @@ namespace OnlineFishShop.Web
             };
 
             //Ensure you have these values in your appsettings.json or secrets.json file
-            //TODO Stoyan Lupov 23-12-2018 Currently in user secrets. Must inform the team about this since its outside the project tree
             var userPwd = this.Configuration.GetSection("UserSettings")["AdminPassword"];
             var user = await userManager.FindByNameAsync(
                 this.Configuration.GetSection("UserSettings")["AdminUsername"]);
