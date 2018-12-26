@@ -14,14 +14,13 @@ namespace OnlineFishShop.Data.Models
         [StringLength(50)]
         public string Name { get; set; }
 
-        [Required]
         [StringLength(25)]
         public string Make { get; set; }
 
         public string Description { get; set; }
 
         [Required]
-//        [StockQuantity]
+        [StockQuantity]
         public byte Stock { get; set; }
 
         [Required]

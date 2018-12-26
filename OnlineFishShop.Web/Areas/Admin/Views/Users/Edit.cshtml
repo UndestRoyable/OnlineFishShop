@@ -1,0 +1,53 @@
+﻿@model OnlineFishShop.Web.Models.UserWithRolesModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+    var appRoles = ViewBag.AppRoles;
+}
+
+<div class="bg0 m-t-23 p-b-140">
+    <div class="container">
+        <h2>Edit User</h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+                    <h4>Edit @Model.Username</h4>
+                    <hr />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Username"></label>
+                        <input asp-for="Username" class="form-control" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    @foreach (var appRole in appRoles)
+                    {
+                        var btnClass = "btn-default";
+
+                        if (Enumerable.Contains(Model.Roles, appRole))
+                        {
+                            btnClass = "btn-primary";
+                        }
+
+                        <a asp-controller="Users" asp-action="ChangeUserRole"
+                           asp-route-newRole="@appRole" asp-route-username="@Model.Username" class="btn @btnClass">
+                            @appRole
+                        </a>
+                    }
+
+                    <div class="row">
+                        <button type="submit" class="btn btn-default">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

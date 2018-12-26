@@ -92,6 +92,13 @@ namespace OnlineFishShop.Web
 
             //Add data services.
             services.AddTransient<IGenericDataService<Product>, GenericDataService<Product>>();
+            services.AddTransient<IGenericDataService<Category>, GenericDataService<Category>>();
+            services.AddTransient<IGenericDataService<Comment>, GenericDataService<Comment>>();
+
+            services.AddTransient<IGenericDataService<BlogPost>, GenericDataService<BlogPost>>();
+            services.AddTransient<IGenericDataService<BlogComment>, GenericDataService<BlogComment>>();
+
+            services.AddTransient<IGenericDataService<Product>, GenericDataService<Product>>();
 
             //Add external login options
             services.AddAuthentication().AddFacebook(facebookOptions =>

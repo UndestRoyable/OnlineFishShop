@@ -1,0 +1,41 @@
+﻿@model List<OnlineFishShop.Web.Models.UserWithRolesModel>
+
+@{
+    ViewBag.Title = "Manage Users";
+    Layout = "_Layout";
+}
+
+<div class="bg0 m-t-23 p-b-140">
+    <div class="container">
+        <h2>Manage Users</h2>
+
+        <table class="table table-striped">
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Actions</th>
+            </tr>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Username</td>
+                    <td>@user.Email</td>
+                    <td>
+                        <ul>
+                            @foreach (var userRole in user.Roles)
+                            {
+                                <li>@userRole</li>
+                            }
+                        </ul>
+                    </td>
+                    <td>
+                        <a class="btn btn-default" asp-area="Admin" asp-controller="Users" asp-action="Edit" asp-route-username="@user.Username">Edit</a>
+
+                        <a class="btn btn-default" asp-area="Admin" asp-controller="Users" asp-action="Delete" asp-route-username="@user.Username">Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

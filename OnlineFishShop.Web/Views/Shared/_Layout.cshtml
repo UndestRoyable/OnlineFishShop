@@ -34,6 +34,32 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                     <li><a asp-area="Products" asp-controller="Home" asp-action="Index">Products</a></li>
+                    
+                    @if (User.IsInRole("Admin"))
+                    {
+@*                         <li> *@
+@*                             <a asp-area="Admin" asp-controller="Storehouse" asp-action="Index">Storehouse</a> *@
+@*                         </li> *@
+
+                        <li>
+                            <a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin Panel</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a asp-area="Admin" asp-controller="Categories" asp-action="Index">Manage Categories</a>
+                                </li>
+                                <li>
+                                    <a asp-area="Products" asp-controller="Home" asp-action="Index">Manage Products</a>
+                                </li>
+                                <li>
+                                    <a asp-area="Admin" asp-controller="Users" asp-action="Index">Manage Users</a>
+                                </li>
+                                @* <li> *@
+                                @*     <a asp-area="Admin" asp-controller="DistributorShipments" asp-action="Index">Manage distributor shipments</a> *@
+                                @* </li> *@
+                            </ul>
+                        </li>
+                    }
+
                 </ul>
                 <partial name="_LoginPartial" />
             </div>

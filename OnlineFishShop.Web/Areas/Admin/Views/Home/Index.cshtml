@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Admin panel";
+}
+
+<div class="bg0 m-t-23 p-b-140">
+    <div class="container">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li>
+                <a class="btn btn-default" asp-area="Admin" asp-controller="Categories" asp-action="Index">Manage Categories</a>
+            </li>
+            <li>
+                <a class="btn btn-default" asp-area="Products" asp-controller="Home" asp-action="Index">Manage Products</a>
+            </li>
+            <li>
+                <a class="btn btn-default" asp-area="Admin" asp-controller="Users" asp-action="Index">Manage Users</a>
+            </li>
+        </ul>
+    </div>
+</div>
