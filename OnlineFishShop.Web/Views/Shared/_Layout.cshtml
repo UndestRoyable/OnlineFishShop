@@ -1,9 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@using OnlineFishShop.Common.Resources
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - OnlineFishShop</title>
+
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -17,7 +20,15 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-dark bg-company-blue navbar-fixed-top">
+        <div class="container-fluid">
+            <partial name="_LoginPartial" />
+            <div class="row">
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/images/stock.jpg" class="img-responsive">
+                </a>
+            </div>
+        </div>
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -26,24 +37,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">OnlineFishShop</a>
+                @*<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">OnlineFishShop</a>*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="Products" asp-controller="Home" asp-action="Index">Products</a></li>
-                    
+                    <li class="nav-button"><a asp-area="" asp-controller="Home" asp-action="Index">@OnlineFishShopResources.lblHome</a></li>
+                    <li class="nav-button"><a asp-area="" asp-controller="Home" asp-action="About">@OnlineFishShopResources.lblAbout</a></li>
+                    <li class="nav-button"><a asp-area="" asp-controller="Home" asp-action="Contact">@OnlineFishShopResources.lblContatcs</a></li>
+                    <li class="nav-button"><a asp-area="Products" asp-controller="Home" asp-action="Index">@OnlineFishShopResources.lblProducts</a></li>
+
                     @if (User.IsInRole("Admin"))
                     {
-@*                         <li> *@
-@*                             <a asp-area="Admin" asp-controller="Storehouse" asp-action="Index">Storehouse</a> *@
-@*                         </li> *@
+                        @*                         <li> *@
+                        @*                             <a asp-area="Admin" asp-controller="Storehouse" asp-action="Index">Storehouse</a> *@
+                        @*                         </li> *@
 
                         <li>
-                            <a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin Panel</a>
-                            <ul class="sub-menu">
+                            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="nav-button">@OnlineFishShopResources.lblAdminPanel</a>
+                            @*<ul class="sub-menu">
                                 <li>
                                     <a asp-area="Admin" asp-controller="Categories" asp-action="Index">Manage Categories</a>
                                 </li>
@@ -52,16 +63,16 @@
                                 </li>
                                 <li>
                                     <a asp-area="Admin" asp-controller="Users" asp-action="Index">Manage Users</a>
-                                </li>
-                                @* <li> *@
-                                @*     <a asp-area="Admin" asp-controller="DistributorShipments" asp-action="Index">Manage distributor shipments</a> *@
-                                @* </li> *@
-                            </ul>
+                                </li>*@
+                            @* <li> *@
+                            @*     <a asp-area="Admin" asp-controller="DistributorShipments" asp-action="Index">Manage distributor shipments</a> *@
+                            @* </li> *@
+                            @*</ul>*@
                         </li>
                     }
 
                 </ul>
-                <partial name="_LoginPartial" />
+
             </div>
         </div>
     </nav>
@@ -71,10 +82,13 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2018 - OnlineFishShop</p>
-        </footer>
     </div>
+    <footer class="bg-company-blue">
+        <p class="footer-paragraph">&copy; @OnlineFishShopResources.lblCopyright</p>
+        <p class="footer-paragraph">@OnlineFishShopResources.lblTheSilvexShop</p>
+        <p class="footer-paragraph">@OnlineFishShopResources.lblRightsReserved</p>
+    </footer>
+
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -99,4 +113,5 @@
 
     @RenderSection("Scripts", required: false)
 </body>
+
 </html>
