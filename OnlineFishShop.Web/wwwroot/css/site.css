@@ -146,8 +146,15 @@ footer p {
 
 #submit-btn {
     background-color: #ef6c33 !important;
+    border:none;
 }
 #border-input {
     border:solid;
     border-color: #ef6c33 !important;
+}
+
+#product-img {
+    width: 100px; /* You can set the dimensions to whatever you want */
+    height: 100px;
+    object-fit: cover;
 }
