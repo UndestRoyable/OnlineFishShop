@@ -23,10 +23,8 @@
     <nav class="navbar navbar-dark bg-company-blue navbar-fixed-top">
         <div class="container-fluid">
             <partial name="_LoginPartial" />
-            <div class="row">
-                <a href="@Url.Action("Index", "Home")">
-                    <img src="~/images/stock.jpg" class="img-responsive">
-                </a>
+            <div class="row" id="header-image">
+                @*<img src="~/images/stock.jpg" class="img-responsive">*@
             </div>
         </div>
         <div class="container">
@@ -97,7 +95,7 @@
                     <p class="footer-paragraph">@OnlineFishShopResources.lblRightsReserved</p>
                 </div>
             </div>
-         </div>
+        </div>
 
     </footer>
 

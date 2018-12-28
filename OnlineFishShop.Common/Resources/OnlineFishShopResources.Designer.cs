@@ -70,6 +70,15 @@ namespace OnlineFishShop.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;b&gt;The Silvex Shop&lt;/b&gt; е онлайн магазин с отношение и фокус &lt;br&gt; върху морските дарове - риба,рибни продукти и премиум аксесоари. &lt;br&gt;  През изминалите 9 години ние се превърнахме в предпочитания &lt;br&gt; български рибен магазин, &lt;br&gt; като през първите 6 месеца на 2017 фодина обслужихме над 20 000 поръчки..
+        /// </summary>
+        public static string lblAboutText {
+            get {
+                return ResourceManager.GetString("lblAboutText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Влезте в профила си.
         /// </summary>
         public static string lblAccountLogin {
@@ -88,11 +97,29 @@ namespace OnlineFishShop.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Банков превод.
+        /// </summary>
+        public static string lblBankPayment {
+            get {
+                return ResourceManager.GetString("lblBankPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Блог.
         /// </summary>
         public static string lblBlog {
             get {
                 return ResourceManager.GetString("lblBlog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Наложен платеж.
+        /// </summary>
+        public static string lblCashOnDelivery {
+            get {
+                return ResourceManager.GetString("lblCashOnDelivery", resourceCulture);
             }
         }
         
@@ -196,6 +223,15 @@ namespace OnlineFishShop.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Методи за плащане:.
+        /// </summary>
+        public static string lblPaymentMethods {
+            get {
+                return ResourceManager.GetString("lblPaymentMethods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Продукти.
         /// </summary>
         public static string lblProducts {
@@ -246,6 +282,24 @@ namespace OnlineFishShop.Common.Resources {
         public static string lblSocial {
             get {
                 return ResourceManager.GetString("lblSocial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Условия за поръчка и доставка:.
+        /// </summary>
+        public static string lblTermsAndConditions {
+            get {
+                return ResourceManager.GetString("lblTermsAndConditions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Минимална стойност на поръчка: &lt;b&gt; 20.00лв. &lt;/b&gt; &lt;br&gt; За поръчки до 13:00ч. (Пон-Пет): &lt;br&gt; доставка същия ден от 13:00ч. до 18:00ч. &lt;br&gt; За поръчки след 13:00ч. или в почивен ден: &lt;br&gt; доставка на следващ работен ден от 11:00ч. до 18:00ч..
+        /// </summary>
+        public static string lblTermsAndConditionsText {
+            get {
+                return ResourceManager.GetString("lblTermsAndConditionsText", resourceCulture);
             }
         }
         

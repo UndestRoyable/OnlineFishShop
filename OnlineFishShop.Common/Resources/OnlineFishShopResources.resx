@@ -120,14 +120,23 @@
   <data name="lblAbout" xml:space="preserve">
     <value>За нас</value>
   </data>
+  <data name="lblAboutText" xml:space="preserve">
+    <value>&lt;b&gt;The Silvex Shop&lt;/b&gt; е онлайн магазин с отношение и фокус &lt;br&gt; върху морските дарове - риба,рибни продукти и премиум аксесоари. &lt;br&gt;  През изминалите 9 години ние се превърнахме в предпочитания &lt;br&gt; български рибен магазин, &lt;br&gt; като през първите 6 месеца на 2017 фодина обслужихме над 20 000 поръчки.</value>
+  </data>
   <data name="lblAccountLogin" xml:space="preserve">
     <value>Влезте в профила си</value>
   </data>
   <data name="lblAdminPanel" xml:space="preserve">
     <value>Административен панел</value>
   </data>
+  <data name="lblBankPayment" xml:space="preserve">
+    <value>Банков превод</value>
+  </data>
   <data name="lblBlog" xml:space="preserve">
     <value>Блог</value>
+  </data>
+  <data name="lblCashOnDelivery" xml:space="preserve">
+    <value>Наложен платеж</value>
   </data>
   <data name="lblConfirmPassword" xml:space="preserve">
     <value>Потвърждаване на парола</value>
@@ -162,6 +171,9 @@
   <data name="lblPassword" xml:space="preserve">
     <value>Парола</value>
   </data>
+  <data name="lblPaymentMethods" xml:space="preserve">
+    <value>Методи за плащане:</value>
+  </data>
   <data name="lblProducts" xml:space="preserve">
     <value>Продукти</value>
   </data>
@@ -179,6 +191,12 @@
   </data>
   <data name="lblSocial" xml:space="preserve">
     <value>Вход със профил в социалните мрежи</value>
+  </data>
+  <data name="lblTermsAndConditions" xml:space="preserve">
+    <value>Условия за поръчка и доставка:</value>
+  </data>
+  <data name="lblTermsAndConditionsText" xml:space="preserve">
+    <value>Минимална стойност на поръчка: &lt;b&gt; 20.00лв. &lt;/b&gt; &lt;br&gt; За поръчки до 13:00ч. (Пон-Пет): &lt;br&gt; доставка същия ден от 13:00ч. до 18:00ч. &lt;br&gt; За поръчки след 13:00ч. или в почивен ден: &lt;br&gt; доставка на следващ работен ден от 11:00ч. до 18:00ч.</value>
   </data>
   <data name="lblTheSilvexShop" xml:space="preserve">
     <value>The Silvex Shop</value>

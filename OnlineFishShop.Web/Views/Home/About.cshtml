@@ -1,7 +1,36 @@
 ﻿@{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = OnlineFishShopResources.lblAbout;
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+@using OnlineFishShop.Common.Resources
 
-<p>Use this area to provide additional information.</p>
+<environment include="Development">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</environment>
+
+<div class="container-manage">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2 class="page-title">@ViewData["Title"]</h2>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p class="page-tеxt">@Html.Raw(OnlineFishShopResources.lblAboutText)</p>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h3 class="page-subtitle">@Html.Raw(OnlineFishShopResources.lblTermsAndConditions)</h3>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p class="page-tеxt">@Html.Raw(OnlineFishShopResources.lblTermsAndConditionsText)</p>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h3 class="page-subtitle">@Html.Raw(OnlineFishShopResources.lblPaymentMethods)</h3>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p class="page-tеxt">@Html.Raw(OnlineFishShopResources.lblCashOnDelivery)</p>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p class="page-tеxt">@Html.Raw(OnlineFishShopResources.lblBankPayment)</p>
+        </div>
+
+    </div>
+</div>
