@@ -184,3 +184,14 @@ footer p {
 .admin-card-group{
     margin-top:3%;
 }
+
+.centered {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-shadow:-1px 0 black, 0 1px black, 1.5px 0 black, 0 -1px black;
+}
