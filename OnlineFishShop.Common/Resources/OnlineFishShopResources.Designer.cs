@@ -133,6 +133,24 @@ namespace OnlineFishShop.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;b&gt;Адрес: &lt;/b&gt; &lt;br&gt; гр. София 1784 &lt;br&gt; бул. &quot;Цариградско шосе&quot; 159.
+        /// </summary>
+        public static string lblContactAdress {
+            get {
+                return ResourceManager.GetString("lblContactAdress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;b&gt;E-mail: &lt;/b&gt; &lt;br&gt; info@fish-international.com &lt;br&gt; sales@silvex-seafoods.com.
+        /// </summary>
+        public static string lblContactEmails {
+            get {
+                return ResourceManager.GetString("lblContactEmails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Контакти.
         /// </summary>
         public static string lblContatcs {
@@ -169,11 +187,29 @@ namespace OnlineFishShop.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;b&gt;Факс: &lt;/b&gt; &lt;br&gt; 02/9798243.
+        /// </summary>
+        public static string lblFaxNumber {
+            get {
+                return ResourceManager.GetString("lblFaxNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Забравена парола?.
         /// </summary>
         public static string lblForgotPassword {
             get {
                 return ResourceManager.GetString("lblForgotPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;b&gt;GSM: &lt;/b&gt; &lt;br&gt; 0899908571.
+        /// </summary>
+        public static string lblGSM {
+            get {
+                return ResourceManager.GetString("lblGSM", resourceCulture);
             }
         }
         
@@ -214,6 +250,24 @@ namespace OnlineFishShop.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Съобщение.
+        /// </summary>
+        public static string lblMessage {
+            get {
+                return ResourceManager.GetString("lblMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Име.
+        /// </summary>
+        public static string lblName {
+            get {
+                return ResourceManager.GetString("lblName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Парола.
         /// </summary>
         public static string lblPassword {
@@ -228,6 +282,24 @@ namespace OnlineFishShop.Common.Resources {
         public static string lblPaymentMethods {
             get {
                 return ResourceManager.GetString("lblPaymentMethods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Телефон.
+        /// </summary>
+        public static string lblPhone {
+            get {
+                return ResourceManager.GetString("lblPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;b&gt;Телефон: &lt;/b&gt; &lt;br&gt; 02/9798243.
+        /// </summary>
+        public static string lblPhoneNumber {
+            get {
+                return ResourceManager.GetString("lblPhoneNumber", resourceCulture);
             }
         }
         
@@ -273,6 +345,15 @@ namespace OnlineFishShop.Common.Resources {
         public static string lblRightsReserved {
             get {
                 return ResourceManager.GetString("lblRightsReserved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Изпрати.
+        /// </summary>
+        public static string lblSend {
+            get {
+                return ResourceManager.GetString("lblSend", resourceCulture);
             }
         }
         

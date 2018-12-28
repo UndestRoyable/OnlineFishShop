@@ -141,6 +141,12 @@
   <data name="lblConfirmPassword" xml:space="preserve">
     <value>Потвърждаване на парола</value>
   </data>
+  <data name="lblContactAdress" xml:space="preserve">
+    <value>&lt;b&gt;Адрес: &lt;/b&gt; &lt;br&gt; гр. София 1784 &lt;br&gt; бул. "Цариградско шосе" 159</value>
+  </data>
+  <data name="lblContactEmails" xml:space="preserve">
+    <value>&lt;b&gt;E-mail: &lt;/b&gt; &lt;br&gt; info@fish-international.com &lt;br&gt; sales@silvex-seafoods.com</value>
+  </data>
   <data name="lblContatcs" xml:space="preserve">
     <value>Контакти</value>
   </data>
@@ -153,8 +159,14 @@
   <data name="lblEmail" xml:space="preserve">
     <value>Еmail адрес</value>
   </data>
+  <data name="lblFaxNumber" xml:space="preserve">
+    <value>&lt;b&gt;Факс: &lt;/b&gt; &lt;br&gt; 02/9798243</value>
+  </data>
   <data name="lblForgotPassword" xml:space="preserve">
     <value>Забравена парола?</value>
+  </data>
+  <data name="lblGSM" xml:space="preserve">
+    <value>&lt;b&gt;GSM: &lt;/b&gt; &lt;br&gt; 0899908571</value>
   </data>
   <data name="lblHello" xml:space="preserve">
     <value>Здравейте,</value>
@@ -168,11 +180,23 @@
   <data name="lblLogout" xml:space="preserve">
     <value>Изход</value>
   </data>
+  <data name="lblMessage" xml:space="preserve">
+    <value>Съобщение</value>
+  </data>
+  <data name="lblName" xml:space="preserve">
+    <value>Име</value>
+  </data>
   <data name="lblPassword" xml:space="preserve">
     <value>Парола</value>
   </data>
   <data name="lblPaymentMethods" xml:space="preserve">
     <value>Методи за плащане:</value>
+  </data>
+  <data name="lblPhone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="lblPhoneNumber" xml:space="preserve">
+    <value>&lt;b&gt;Телефон: &lt;/b&gt; &lt;br&gt; 02/9798243</value>
   </data>
   <data name="lblProducts" xml:space="preserve">
     <value>Продукти</value>
@@ -188,6 +212,9 @@
   </data>
   <data name="lblRightsReserved" xml:space="preserve">
     <value>All rights reserved</value>
+  </data>
+  <data name="lblSend" xml:space="preserve">
+    <value>Изпрати</value>
   </data>
   <data name="lblSocial" xml:space="preserve">
     <value>Вход със профил в социалните мрежи</value>

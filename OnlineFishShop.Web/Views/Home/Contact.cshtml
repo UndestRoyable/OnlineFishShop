@@ -1,17 +1,69 @@
 ﻿@{
-    ViewData["Title"] = "Contact";
+    ViewData["Title"] = OnlineFishShopResources.lblContatcs;
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+@using OnlineFishShop.Common.Resources
+<h2 class="page-title">@ViewData["Title"]</h2>
+@*<address>
+        One Microsoft Way<br />
+        Redmond, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.0100
+    </address>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+    <address>
+        <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <*@
+
+<div class="container-manage">
+    <div class="col-lg-4">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p class="page-subtitle-left">@Html.Raw(OnlineFishShopResources.lblPhoneNumber)</p>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p class="page-subtitle-left">@Html.Raw(OnlineFishShopResources.lblFaxNumber)</p>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p class="page-subtitle-left">@Html.Raw(OnlineFishShopResources.lblGSM)</p>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p class="page-subtitle-left">@Html.Raw(OnlineFishShopResources.lblContactEmails)</p>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p class="page-subtitle-left">@Html.Raw(OnlineFishShopResources.lblContactAdress)</p>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 input-position text-center">
+            <img src="~/images/gplus-logo.png" class="img-thumbnail" id="contact-img">
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 input-position text-center">
+            <img src="~/images/fb-logo.png" class="img-thumbnail" id="contact-img">
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 input-position text-center">
+            <img src="~/images/email-logo.png" class="img-thumbnail" id="contact-img">
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <form>
+            <div class="form-group">
+                <input id="border-input" type="text" class="form-control" name="" value="" placeholder=@OnlineFishShopResources.lblName>
+            </div>
+            <div class="form-group">
+                <input id="border-input" type="email" class="form-control" name="" value="" placeholder=@OnlineFishShopResources.lblEmail>
+            </div>
+            <div class="form-group">
+                <input id="border-input" type="tel" class="form-control" name="" value="" placeholder=@OnlineFishShopResources.lblPhone>
+            </div>
+            <div class="form-group">
+                <textarea id="border-input" class="form-control" name="" rows="3" placeholder=@OnlineFishShopResources.lblMessage></textarea>
+            </div>
+            <button class="btn btn-warning" type="submit" id="submit-btn" name="button">
+                <i class="fa fa-paper-plane-o" aria-hidden="true"></i> @OnlineFishShopResources.lblSend
+            </button>
+        </form>
+    </div>
+</div>
