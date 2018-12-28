@@ -232,6 +232,15 @@ namespace OnlineFishShop.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Разнообразие от продукти &lt;br&gt; Гарантирано качество &lt;br&gt; Бърза доставка.
+        /// </summary>
+        public static string lblHomeDescription {
+            get {
+                return ResourceManager.GetString("lblHomeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Вход.
         /// </summary>
         public static string lblLogin {
@@ -246,6 +255,42 @@ namespace OnlineFishShop.Common.Resources {
         public static string lblLogout {
             get {
                 return ResourceManager.GetString("lblLogout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Управление на категории.
+        /// </summary>
+        public static string lblManageCategories {
+            get {
+                return ResourceManager.GetString("lblManageCategories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Добавяне, премахване, редактиране.
+        /// </summary>
+        public static string lblManageDescr {
+            get {
+                return ResourceManager.GetString("lblManageDescr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Управление на продукти.
+        /// </summary>
+        public static string lblManageProducts {
+            get {
+                return ResourceManager.GetString("lblManageProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Управление на потребители.
+        /// </summary>
+        public static string lblManageUsers {
+            get {
+                return ResourceManager.GetString("lblManageUsers", resourceCulture);
             }
         }
         

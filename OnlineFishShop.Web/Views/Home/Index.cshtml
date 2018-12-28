@@ -1,11 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@using OnlineFishShop.Common.Resources
+
+<environment include="Development">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</environment>
 
 <div class="container-fluid">
 
-    <div class="col-md-12">
-        <img src="~/images/seafood-banner.jpg" class="img-responsive">
-        <h1>Miro e krasiv</h1>
+    <div class="row" id="home-image">
+
+    </div>
+    <h1 class="page-subtitle">@OnlineFishShopResources.lblTheSilvexShop</h1>
+    <h2 class="page-title">@Html.Raw(@OnlineFishShopResources.lblHomeDescription)</h2>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 input-position text-center">
+        <img src="~/images/satisfaction-guarantee.png" class="img-thumbnail" id="satisfaction-img">
     </div>
 </div>

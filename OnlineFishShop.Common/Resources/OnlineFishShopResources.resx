@@ -174,11 +174,26 @@
   <data name="lblHome" xml:space="preserve">
     <value>Начало</value>
   </data>
+  <data name="lblHomeDescription" xml:space="preserve">
+    <value>Разнообразие от продукти &lt;br&gt; Гарантирано качество &lt;br&gt; Бърза доставка</value>
+  </data>
   <data name="lblLogin" xml:space="preserve">
     <value>Вход</value>
   </data>
   <data name="lblLogout" xml:space="preserve">
     <value>Изход</value>
+  </data>
+  <data name="lblManageCategories" xml:space="preserve">
+    <value>Управление на категории</value>
+  </data>
+  <data name="lblManageDescr" xml:space="preserve">
+    <value>Добавяне, премахване, редактиране</value>
+  </data>
+  <data name="lblManageProducts" xml:space="preserve">
+    <value>Управление на продукти</value>
+  </data>
+  <data name="lblManageUsers" xml:space="preserve">
+    <value>Управление на потребители</value>
   </data>
   <data name="lblMessage" xml:space="preserve">
     <value>Съобщение</value>

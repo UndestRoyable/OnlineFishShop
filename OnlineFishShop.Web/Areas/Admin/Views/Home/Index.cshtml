@@ -1,20 +1,58 @@
 ﻿@{
-    ViewData["Title"] = "Admin panel";
+    ViewData["Title"] = OnlineFishShopResources.lblAdminPanel;
 }
+@using OnlineFishShop.Common.Resources
 
-<div class="bg0 m-t-23 p-b-140">
-    <div class="container">
-        <h2>Admin Panel</h2>
-        <ul>
-            <li>
-                <a class="btn btn-default" asp-area="Admin" asp-controller="Categories" asp-action="Index">Manage Categories</a>
-            </li>
-            <li>
-                <a class="btn btn-default" asp-area="Products" asp-controller="Home" asp-action="Index">Manage Products</a>
-            </li>
-            <li>
-                <a class="btn btn-default" asp-area="Admin" asp-controller="Users" asp-action="Index">Manage Users</a>
-            </li>
-        </ul>
-    </div>
-</div>
+<environment include="Development">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</environment>
+
+
+        <h2 class="page-title">@ViewData["Title"]</h2>
+        @*<ul>
+                <li>
+                    <a class="btn btn-default" asp-area="Admin" asp-controller="Categories" asp-action="Index">Manage Categories</a>
+                </li>
+                <li>
+                    <a class="btn btn-default" asp-area="Products" asp-controller="Home" asp-action="Index">Manage Products</a>
+                </li>
+                <li>
+                    <a class="btn btn-default" asp-area="Admin" asp-controller="Users" asp-action="Index">Manage Users</a>
+                </li>
+            </ul>
+        </div>*@
+        <div class="admin-card-group">
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 input-position text-center">
+                <a asp-area="Admin" asp-controller="Categories" asp-action="Index">
+                    <div class="card">
+                        <img class="card-img-top" src="~/images/categories.jpg" id="category-img">
+                        <div class="card-body">
+                            <h5 class="category-card-title">@OnlineFishShopResources.lblManageCategories</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 input-position text-center">
+                <a asp-area="Products" asp-controller="Home" asp-action="Index">
+                    <div class="card">
+                        <img class="card-img-top" src="~/images/products.png" id="category-img">
+                        <div class="card-body">
+                            <h5 class="category-card-title">@OnlineFishShopResources.lblManageProducts</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 input-position text-center">
+                <a asp-area="Admin" asp-controller="Users" asp-action="Index">
+                    <div class="card">
+                        <img class="card-img-top" src="~/images/user.png" id="category-img">
+                        <div class="card-body">
+                            <h5 class="category-card-title">@OnlineFishShopResources.lblManageUsers</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>

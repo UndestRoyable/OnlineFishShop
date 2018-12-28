@@ -44,6 +44,12 @@ body {
     background-size:cover;
     padding: 0 0 14%;
 }
+.row#home-image {
+    background-image: url(/images/seafood-banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 0 14%;
+}
 
 .navbar-brand {
     color: #abdff1 !important;
@@ -62,7 +68,7 @@ nav .navbar-nav li a {
 }
 body {
     padding-top: 350px;
-    min-height:600px;
+    min-height:800px;
 }
 footer{
     width:100%;
@@ -135,7 +141,7 @@ footer p {
 
 #payment-img {
     margin-top:5%;
-    width: 250px; /* You can set the dimensions to whatever you want */
+    width: 250px; 
     height: 200px;
     object-fit: cover;
 }
@@ -154,7 +160,27 @@ footer p {
 }
 
 #product-img {
-    width: 100px; /* You can set the dimensions to whatever you want */
+    width: 100px;
     height: 100px;
     object-fit: cover;
+}
+#satisfaction-img {
+    width: 150px; 
+    height: 150px;
+    object-fit: cover;
+}
+
+#category-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+.category-card-title {
+    font-weight: bold;
+    color: #ef6c33;
+    font-size:20px;
+}
+.admin-card-group{
+    margin-top:3%;
 }
